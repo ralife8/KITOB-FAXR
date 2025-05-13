@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8">
+  <title>Qurilish haqida maʼlumot</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; background: #f7f7f7; }
+    .timer { font-size: 24px; font-weight: bold; margin-top: 10px; color: #d9534f; }
+    .section { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Qurilish haqida maʼlumot</h1>
+  <div class="section"><strong>Obyekt nomi:</strong> Shaxrisabz shaxri "uymovit " MFYdagi 30-sonli MTTni rekonstruksiya qilish.</div>
+  <div class="section"><strong>Qurilishga ruxsat berilgan sana:</strong> 01.05.2025</div>
+  <div class="section"><strong>Buyurtmachi:</strong> Infra tuzilmani rivojlantirish injiniring kompaniyasi davlat muassasasi</div>
+  <div class="section"><strong>Loyihachi:</strong> "SARDOBA DIZAYN QURULISH" XK</div>
+  <div class="section"><strong>Pudratchi tashkilot:</strong> "KITOB FAXR" XK</div>
+  <div class="section"><strong>Manzil:</strong> Kitob shaxri Ali Qushchi MFY Ali Qushchi ko'chasi 80-uy</div>
+  <div class="section"><strong>Ekspertiza reestr raqami:</strong> 229545</div>
+  <div class="section"><strong>Kengash xulosasi raqami:</strong> 161400398</div>
+  <div class="section"><strong>Qurilish tugashiga qolgan vaqt:</strong>
+    <div id="countdown" class="timer"></div>
+  </div>
+
+  <script>
+    const endDate = new Date("2025-09-10T23:59:59");
+    function updateCountdown() {
+      const now = new Date();
+      const diff = endDate - now;
+      if (diff <= 0) {
+        document.getElementById("countdown").innerText = "Qurilish yakunlangan.";
+        return;
+      }
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+      document.getElementById("countdown").innerText =
+        `${days} kun, ${hours} soat, ${minutes} min, ${seconds} sek.`;
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
